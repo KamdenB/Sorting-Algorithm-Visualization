@@ -9,10 +9,10 @@ let data = [];
 let labels = [];
 let backgroundColor = []
 
-let numbers = 100;
+let numbers = 250;
 
 for(let i = 0; i < numbers; i++){ 
-    data.push(Math.floor(Math.random()*Math.floor(100)))
+    data.push(Math.floor(Math.random()*Math.floor(numbers*2)))
     labels.push('')
     backgroundColor.push(chartColors.blue)
 }
@@ -22,7 +22,7 @@ let mainChart = new Chart(ctx, {
     data: {
         labels,
         datasets: [{
-            label: 'Random Numbers',
+            label: `${numbers} Random Numbers`,
             backgroundColor,
             data,
             borderWidth: 1
@@ -76,5 +76,5 @@ let bubble_sort = (a, cb) => {
         mainChart.data.datasets[0].data = x
         mainChart.update(0)
         n--;
-    }, 100)
+    }, 75)
 }
